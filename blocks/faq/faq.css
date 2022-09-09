@@ -1,0 +1,13 @@
+.faq > div {
+    display: flex;
+}
+
+.faq {
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.answer.hidden {
+    visibility: hidden;
+}
