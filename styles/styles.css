@@ -239,6 +239,9 @@ main .section.highlight {
 .section.grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 10px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .section .default-content-wrapper {
