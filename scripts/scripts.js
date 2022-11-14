@@ -201,12 +201,14 @@ export async function fetchPlaceholders(prefix = 'default') {
  */
 export function decorateBlock(block) {
   const shortBlockName = block.classList[0];
+  const gridName = block.classList[1]?.match(/^grid-([0-9]|1[0-2])$/);
   if (shortBlockName) {
     block.classList.add('block');
     block.setAttribute('data-block-name', shortBlockName);
     block.setAttribute('data-block-status', 'initialized');
     const blockWrapper = block.parentElement;
     blockWrapper.classList.add(`${shortBlockName}-wrapper`);
+    if (gridName) blockWrapper.classList.add(`wrapper-${gridName[0]}`);
     const section = block.closest('.section');
     if (section) section.classList.add(`${shortBlockName}-container`);
   }
